@@ -30,7 +30,6 @@ int main(int argc, char** argv) {
     const int MONTH=3; //Months: June, July, August
     char weather[MONTH][DAY];
     int count[MONTH]={0,0,0};
-    int result[MONTH];
     //Input Data
     writAry(MONTH);
     inAry(weather,MONTH);
