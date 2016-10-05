@@ -11,11 +11,10 @@
 #include <ctime>      //Time
 #include <iomanip>    //Output Manipulation
 
-#include "Array.h"    //Output Manipulation
 using namespace std;  //Namespace of the System Libraries
 
 //User Libraries
-
+#include "Array.h"
 //Global Constants
 
 //Function Prototypes

@@ -25,12 +25,8 @@ int main(int argc, char** argv) {
     //Set Random Seed
     srand(static_cast<unsigned int>(time(0)));
     //Variables
-    const int QUARTER=4; //Four Quarters and 4 Divisions
-    SaleDat *array;      //Array of Sales Data structure
+    SaleDat array[QUARTER];      //Array of Sales Data structure
     
-    //Allocate Memory
-    array->sales=new float[QUARTER]; //4 quarters of sales
-    array=new SaleDat[QUARTER];      //4 divisions
     //Input Data
     getSales(array,QUARTER);
     
@@ -39,14 +35,12 @@ int main(int argc, char** argv) {
     //Output Data
     display(array,QUARTER);
     
-    //Deallocate Memory
-    delete []array->sales;
-    delete []array;
-    
     return 0;
 }
 
 void getSales(SaleDat *a,int n){
+    //Variables
+    float temp; //Temporary variable
     //Input Data
     for(unsigned int i=0;i<n;i++){
         a[i].divName=i;
@@ -55,19 +49,12 @@ void getSales(SaleDat *a,int n){
         }
         for(int j=0;j<n;j++){
             //Temp variable
-            float temp=0;
+            if(j==0)temp=0; //So temp does not reset each loop
             temp+=a[i].sales[j];
             if(j==(n-1))a[i].totSale=temp;
         }
-        for(int j=0;j<n;j++){
-            //Temp variable
-            float temp=0;
-            temp+=a[i].sales[j];
-            if(j==(n-1)){
-                temp/=n;
-                a[i].aveSale=temp;
-            }
-        }
+            a[i].aveSale=a[i].totSale;
+            a[i].aveSale/=4;
     }
 }
 
