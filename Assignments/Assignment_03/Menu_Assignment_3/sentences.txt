@@ -1,0 +1,1 @@
+THIS is A test PARAGRAPH.aLL CHARacters WIlL Be CHanGed to LowercaSE CHAraCTERs.EXCEPT FOr tHe first CHAractER IN EACh Sentence.

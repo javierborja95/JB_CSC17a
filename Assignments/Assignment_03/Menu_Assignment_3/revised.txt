@@ -1,0 +1,1 @@
+This is a test paragraph.All characters will be changed to lowercase characters.Except for the first character in each sentence..
