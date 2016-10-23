@@ -29,5 +29,6 @@ struct Letter{
     char letter;
     bool isUsed=false;
 };
+
 #endif /* GAME_H */
 
