@@ -16,7 +16,8 @@
 
 struct Player{
     std::string name;
-    float money;
+    int money;
+    unsigned int score;
 };
 
 struct Clue{
@@ -25,8 +26,8 @@ struct Clue{
 };
 
 struct Letter{
-    unsigned char letter;
-    bool isUsed;
+    char letter;
+    bool isUsed=false;
 };
 
 #endif /* GAME_H */
