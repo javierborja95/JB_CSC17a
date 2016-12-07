@@ -23,8 +23,8 @@ void Play::play(Game *a){
     clue.setPhrase(s);
     
     //Create a new Phrase
-    Phrase *p = new Phrase;
-    p->setArr(strlen(s),s);
+    Phrase p;
+    p.setArr(strlen(s),s);
     
     //Copy Phrase to pointer
     this->p=p;
@@ -51,19 +51,19 @@ void Play::guess(Game *a){
     getline(cin,answer);
     
     //Process Data
-    for(int i=0;i<clue.getSize();i++){ //Convert to uppercase
+    for(int i=0;i<p.size;i++){ //Convert to uppercase
         answer[i]=static_cast<char>(toupper(answer[i]));
     }
-    for(int i=0;i<clue.getSize();i++){
-        cout<<p->getLetter(i);
-        if((p->getLetter(i))!=(answer[i])){//Check to see if all letters match
+    cout<<"there should be "<<p.size<<" letters"<<endl;
+    for(int i=0;i<p.size;i++){
+        cout<<p.getLetter(i);
+        if((p.getLetter(i))!=(answer[i])){//Check to see if all letters match
             win=false;                 //Phrase did not match answer
         }
-        if(i==clue.getSize()-1)cout<<"size= "<<clue.getSize()<<endl;
     }
     cout<<endl;
-    for(int i=0;i<clue.getSize();i++){ //Go through phrase array to add
-        if((p->getUsed(i))==false){     //points for each letter that is not used
+    for(int i=0;i<p.size;i++){ //Go through phrase array to add
+        if((p.getUsed(i))==false){     //points for each letter that is not used
             counter++;
         }
     }
@@ -84,7 +84,7 @@ void Play::guess(Game *a){
 void Play::display(){
     //Output Data
     clue.showCat();
-    p->display();
+    p.display();
     k.display();
     cout<<endl;
 }

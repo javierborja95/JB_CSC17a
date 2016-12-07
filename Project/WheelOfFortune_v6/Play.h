@@ -21,15 +21,13 @@ class Play{
         Clue clue;   //Category and clue phrase
         bool win;    //Win or lose
         Keyboard k;  //Keyboard
-        Phrase *p;   //Phrase
+        Phrase p;    //Phrase
     public:
         //Member Functions
         void play(Game*);
         ~Play(){
-            cout<<"PLAY DESTRUCTOR"<<endl;
-            delete[] p;
-            p=nullptr;
-            cout<<"last thing ever"<<endl;
+            //delete[] p;
+            //p=nullptr;
         }
         void spin();
         void buy();

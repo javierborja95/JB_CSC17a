@@ -14,14 +14,13 @@ Phrase::Phrase(){
 
 Phrase::~Phrase(){
     //Deallocate Memory
-    cout<<"PHRASE DESTRUCTOR"<<endl;
     arr=nullptr;
 }
 
 void Phrase::setArr(unsigned int n, string s){
     //Allocate Memory
-    shared_ptr<Letter> ptr(new Letter[n]); //New array of Letters for phrase
-    arr=ptr.get();
+    Letter *ptr=new Letter[n]; //New array of Letters for phrase
+    arr=ptr;
     //Input Data
     for(int i=0;i<n;i++){               //Initialize phrase array with clue
         arr[i].setChar(s[i]);
@@ -30,6 +29,11 @@ void Phrase::setArr(unsigned int n, string s){
         }
     }
     size=n;
+    cout<<"Outputting phrase from Phrase::setArr"<<endl;
+    for(int i=0;i<size;i++){
+        cout<<arr[i].getLetter();
+    }
+    cout<<endl;
 }
 
 void Phrase::display(){
@@ -40,6 +44,12 @@ void Phrase::display(){
         }else{
             arr[i].display();
         }
+    }
+    cout<<endl;
+    
+    cout<<endl<<"Outputting phrase from Phrase::display"<<endl;
+    for(int i=0;i<size;i++){
+        cout<<arr[i].getLetter();
     }
     cout<<endl;
 }
