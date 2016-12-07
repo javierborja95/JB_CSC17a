@@ -8,10 +8,20 @@
 #include "Phrase.h"
 #include "Letter.h"
 
-Phrase::Phrase(unsigned int n,string s){
-    //Allocate Memory
-    arr=new Letter[n]; //New array of Letters for phrase
+Phrase::Phrase(){
     
+}
+
+Phrase::~Phrase(){
+    //Deallocate Memory
+    cout<<"PHRASE DESTRUCTOR"<<endl;
+    arr=nullptr;
+}
+
+void Phrase::setArr(unsigned int n, string s){
+    //Allocate Memory
+    shared_ptr<Letter> ptr(new Letter[n]); //New array of Letters for phrase
+    arr=ptr.get();
     //Input Data
     for(int i=0;i<n;i++){               //Initialize phrase array with clue
         arr[i].setChar(s[i]);
@@ -20,12 +30,6 @@ Phrase::Phrase(unsigned int n,string s){
         }
     }
     size=n;
-}
-
-Phrase::~Phrase(){
-    //Deallocate Memory
-    delete[] arr;
-    arr=nullptr;
 }
 
 void Phrase::display(){
@@ -38,4 +42,12 @@ void Phrase::display(){
         }
     }
     cout<<endl;
+}
+
+char Phrase::getLetter(int n){
+    return arr[n].getLetter();
+}
+
+bool Phrase::getUsed(int n){
+    return arr[n].isLtUsed();
 }

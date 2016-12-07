@@ -50,7 +50,7 @@ class Game{
         void addScore(unsigned int);
         
         //Subtract Functions
-        void subMoney();
+        void subMoney(int);
         
         //Operator Overloads
         

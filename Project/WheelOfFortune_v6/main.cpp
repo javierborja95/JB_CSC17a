@@ -23,21 +23,9 @@ void play(Game *);
 //Execution
 
 int main(int argc, char** argv){
-    char d='X';
-    Letter *test=new Letter;
-    test->setChar(d);
-    test->display();
-    delete[] test;
-    Keyboard qwer;
-    qwer.display();
-    Phrase asdf(12,"test string");
-    asdf.arr[1].use();
-    asdf.display();
-
-    
     //Variables
-    Game whOfF;       //Game object
-    Game *ptr=&whOfF; //Pointer to pass game object
+    Game whOfF;       //Wheel of fortune Game object
+    Game *ptr=&whOfF; //Pointer to pass Game object
     char choice;      //Menu choice
     
     //Input Data
@@ -53,7 +41,7 @@ int main(int argc, char** argv){
                 break;
             }
             case'2':{
-                whOfF.lderBrd();
+                whOfF.lderBrd();//****Placeholder pass in pointer*****
                 cout<<"Your money = $"<<whOfF.getMoney()<<"0.00\n";
                 break;
             }
@@ -95,11 +83,11 @@ void play(Game *ptr){
                     game.buy();
                     break;
                 case'3':
-                    game.guess();
+                    game.guess(ptr);
                     break;
                 default: cout<<"Placeholder for exception"<<endl;
             }
         }while(option<49||option>51);
-    //Loop until win or lose    
+    //Loop until win or lose
     }while((game.getWin()==false)&&(game.getMoney(ptr)>0));
 }

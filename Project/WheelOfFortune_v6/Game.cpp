@@ -80,10 +80,17 @@ void Game::menu(){
             "Any other input to exit: ";
 }
 
-void Game::addMoney(int){
-    
+void Game::addMoney(int n){
+    //Process Data
+    user.money+=n;
 }
 
-void Game::addScore(unsigned int){
-    
+void Game::addScore(unsigned int n){
+    //Process Data
+    user.score+=n;
+}
+
+void Game::subMoney(int n){
+    //Process Data
+    user.money-=n;
 }

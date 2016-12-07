@@ -10,6 +10,7 @@
 //System Libraries
 #include <iostream>  //Input/Output
 #include <string>    //String Library
+#include <memory>    //Unique pointers
 using namespace std; //Namespace of the System Libraries
 
 //User Libraries
@@ -21,13 +22,18 @@ class Phrase: public Letter{
         int size;    //Size of array
     public:
         //Constructor
-        Phrase(unsigned int,string);
+        Phrase();
         
         //Destructor
         ~Phrase();
         
         //Member Functions
+        void setArr(unsigned int,string);
         void display() override;
+        
+        //Accessors
+        char getLetter(int);
+        bool getUsed(int);
 };
 
 #endif /* PHRASE_H */
