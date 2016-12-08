@@ -27,8 +27,19 @@ class Keyboard: public Letter{
         //Destructor
         ~Keyboard();
         
+        //Mutators
+        void use(int i)
+        {arr[i].use();}
+        
+        //Accessors
+        bool isUsed(int i)
+        {return arr[i].isLtUsed();}
+        char getChar(int i)
+        {return arr[i].getLetter();}
+        
         //Member functions
         void display() override;
+        void setArr();
 };
 
 #endif /* KEYBOARD_H */

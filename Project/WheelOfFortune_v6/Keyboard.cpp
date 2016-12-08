@@ -8,13 +8,7 @@
 #include "Keyboard.h"
 
 Keyboard::Keyboard(){
-    //Allocate Memory
-    arr=new Letter[ALPHA]; //New Array of Letters for keyboard
-    
-    //Process Data
-    for(int i=0;i<ALPHA;i++){   //Initialize with alphabet
-        arr[i].setChar('A'+i);
-    }
+    setArr();
 }
 
 Keyboard::~Keyboard(){
@@ -31,5 +25,15 @@ void Keyboard::display(){
             arr[i].display();
         }else cout<<"■";
         if((i+1)%13==0) cout<<endl;
+    }
+}
+
+void Keyboard::setArr(){
+    //Allocate Memory
+    arr=new Letter[ALPHA]; //New Array of Letters for keyboard
+    
+    //Process Data
+    for(int i=0;i<ALPHA;i++){   //Initialize with alphabet
+        arr[i].setChar('A'+i);
     }
 }

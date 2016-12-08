@@ -26,8 +26,8 @@ class Clue{
         void setPhrase(string);
         
         //Accessors
-        char getPhrase()
-        {return *phrase;}
+        char getPhrase(int i)
+        {return phrase[i];}
         int getSize()
         {return strlen(phrase);}
         

@@ -27,13 +27,17 @@ class Phrase: public Letter{
         //Destructor
         ~Phrase();
         
-        //Member Functions
-        void setArr(unsigned int,string);
-        void display() override;
+        //Mutators
+        void use(int i)
+        {arr[i].use();}
         
         //Accessors
         char getLetter(int);
         bool getUsed(int);
+        
+        //Member Functions
+        void setArr(unsigned int,string);
+        void display() override;
 };
 
 #endif /* PHRASE_H */

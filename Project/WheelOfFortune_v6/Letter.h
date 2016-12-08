@@ -41,6 +41,8 @@ class Letter{
         char getLetter(){return letter;}
         bool isLtUsed(){return isUsed;}
         //static int callUse(){return calls;}
+        
+        //Member functions
         virtual void display(){cout<<letter;}
 };
 

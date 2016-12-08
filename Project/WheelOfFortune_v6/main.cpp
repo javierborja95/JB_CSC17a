@@ -77,10 +77,10 @@ void play(Game *ptr){
             cin.ignore();
             switch(option){
                 case'1':
-                    game.spin();
+                    game.spin(ptr);
                     break;
                 case'2':
-                    game.buy();
+                    game.buy(ptr);
                     break;
                 case'3':
                     game.guess(ptr);

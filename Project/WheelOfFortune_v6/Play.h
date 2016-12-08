@@ -16,29 +16,34 @@ using namespace std; //Namespace of the System Libraries
 #include "Keyboard.h"
 #include "Phrase.h"
 
+//Variables
+const int WHEEL=12; //Size of wheel
+
 class Play{
     private:
         Clue clue;   //Category and clue phrase
         bool win;    //Win or lose
         Keyboard k;  //Keyboard
         Phrase p;    //Phrase
+        int *w;      //Wheel of spin options
     public:
+        //Destructor
+        ~Play()
+        {delete[] w;}
+        
         //Member Functions
-        void play(Game*);
-        ~Play(){
-            //delete[] p;
-            //p=nullptr;
-        }
-        void spin();
-        void buy();
-        void guess(Game*);
-        void display();
-        void menu(Game*);
+        void play(Game*); //The actual game
+        void end(Game*);  //Ending screen, win or lose
+        void spin(Game*); //Spin the wheel
+        void buy(Game*);       //Buy a vowel
+        void guess(Game*);//Guess the phrase
+        void display();   //Display the keyboard and hidden phrase
+        void menu(Game*); //Outputs the game menu
         
         //Accessors
-        bool getWin()
+        bool getWin()          //Returns win boolean
         {return win;}
-        int getMoney(Game *a)
+        int getMoney(Game *a)  //Returns player's money
         {return a->getMoney();}
 };
 
