@@ -65,14 +65,14 @@ int main(int argc, char** argv){
 void play(Game *ptr){
     //Variables
     Play game;      //Play object
-    game.play(ptr);
     char option;    //Menu option
+    game.play(ptr); //Start playing
     
     //Input Data
     do{
-        game.display();
+        game.display(); //Display hidden phrase and available keyboard letters
         do{
-            game.menu(ptr);
+            game.menu(ptr); //Display menu
             cin>>option;
             cin.ignore();
             switch(option){

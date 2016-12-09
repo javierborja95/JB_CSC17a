@@ -14,6 +14,7 @@ Game::Game(){
     //Fill Library
     counter=0;
     fill();
+    
     //Input
     cout<<"Input your name: ";
     getline(cin,user.name);
@@ -60,7 +61,6 @@ void Game::addLder(){
     //Close files
     out.close();
 }
-
 
 void Game::fill(){
     //Variables
@@ -251,7 +251,6 @@ bool Game::isGood(char a[]){
         return false;
     }
 }
-
 
 void Game::menu(){
     //Output Data

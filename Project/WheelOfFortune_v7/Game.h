@@ -9,10 +9,10 @@
 
 //System Libraries
 #include <cstdlib>   //Random seed
+#include <ctime>     //Time
 #include <fstream>   //File Input/Output
 #include <iomanip>   //Output manipulation
 #include <vector>    //Vectors
-#include <cstdlib>   //Exit function
 using namespace std; //Namespace of the System Libraries
 
 //User Libraries
