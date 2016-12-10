@@ -10,14 +10,13 @@
 //System Libraries
 #include <iostream>  //Input/Output
 #include <string>    //String Library
-#include <memory>    //Unique pointers
 using namespace std; //Namespace of the System Libraries
 
 //User Libraries
 #include "Letter.h"
 
 class Phrase: public Letter{
-    public:
+    private:
         Letter *arr; //Array of letters
         int size;    //Size of array
     public:
@@ -32,6 +31,7 @@ class Phrase: public Letter{
         {arr[i].use();}
         
         //Accessors
+        int getSize(){return size;}
         char getLetter(int);
         bool getUsed(int);
         

@@ -23,6 +23,7 @@ void Play::play(Game *a){
     this->w=w;
     
     //Input Data
+    a->in.clear();
     a->in.seekg(a->arr[index],ios::beg); //Go to position in file to get phrase and clue
     a->in.get();
     a->in>>c;
@@ -45,7 +46,7 @@ void Play::end(Game *a){
     //Output Data
     if(a->getMoney()<=0){
         cout<<"The phrase was actually: "<<endl;
-        for(int i=0;i<p.size;i++){
+        for(int i=0;i<p.getSize();i++){
             cout<<clue.getPhrase(i);
         }cout<<endl;
         cout<<"You have no money.\n"
@@ -102,7 +103,7 @@ void Play::spin(Game *a){
             cin.get();
         }
     }while(error); //Keep looping until valid input
-    for(int i=0;i<p.size;i++){
+    for(int i=0;i<p.getSize();i++){
         if(input==p.getLetter(i)){  //If letter matches
             points+=10;             //Add ten points
             match=true;             //Match is true
@@ -116,7 +117,7 @@ void Play::spin(Game *a){
         cout<<"You gain 10 points for each letter guessed"<<endl;
         cout<<"You gained "<<points<<" points"<<endl;
         a->addScore(points);
-        for(int i=0;i<p.size;i++){
+        for(int i=0;i<p.getSize();i++){
             if(p.getUsed(i)==false){
                 win=false;   //Not all letters are revealed, win=false;
             }
@@ -188,11 +189,11 @@ void Play::buy(Game *a){
     //Process Data
     cout<<"You have bought a vowel for $500.00"<<endl;
     a->subMoney(50);              //Subtract money from user
-    for(int i=0;i<p.size;i++){
+    for(int i=0;i<p.getSize();i++){
         if(p.getLetter(i)==input) //Reveal vowels from clue phrase
             p.use(i);
     }
-    for(int i=0;i<p.size;i++){
+    for(int i=0;i<p.getSize();i++){
         if(p.getUsed(i)==false){
             win=false;//Not all letters are revealed, win=false;
         }
@@ -216,16 +217,16 @@ void Play::guess(Game *a){
     getline(cin,answer);
     
     //Process Data
-    for(int i=0;i<p.size;i++){ //Convert to uppercase
+    for(int i=0;i<p.getSize();i++){ //Convert to uppercase
         answer[i]=static_cast<char>(toupper(answer[i]));
     }
-    for(int i=0;i<p.size;i++){
+    for(int i=0;i<p.getSize();i++){
         if((p.getLetter(i))!=(answer[i])){//Check to see if all letters match
             win=false;                    //Phrase did not match answer
         }
     }
     cout<<endl;
-    for(int i=0;i<p.size;i++){         //Go through phrase array to add
+    for(int i=0;i<p.getSize();i++){    //Go through phrase array to add
         if((p.getUsed(i))==false){     //points for each letter that is not used
             counter++;
         }

@@ -12,9 +12,6 @@ using namespace std;
 //User Libraries
 #include "Game.h"
 #include "Play.h"
-#include "Letter.h"
-#include "Keyboard.h"
-#include "Phrase.h"
 
 //Global Constants
 

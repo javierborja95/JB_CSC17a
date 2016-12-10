@@ -16,6 +16,7 @@
 using namespace std; //Namespace of the System Libraries
 
 //User Libraries
+#include "Base.h"
 #include "Player.h"
 #include "Clue.h"
 #include "addSub.h"
@@ -23,9 +24,8 @@ using namespace std; //Namespace of the System Libraries
 //Variables
 const int SIZE=44; //Max Size of Char array
 
-class Game{
+class Game: public Base{
     private:
-        Player user;               //User
         unsigned int *arr;         //Index array to find categories and clues
         int counter;               //Size of Library
         fstream in;                //Input
@@ -34,6 +34,7 @@ class Game{
         int staticCalls; //Keeps track of Letter calls, just for fun
         //Constructor
         Game();  //Introduction, sets random seed, creates library
+        
         //Destructor
         ~Game(); //Deletes library, closes file streams, appends to leaderboard
         
@@ -45,13 +46,6 @@ class Game{
         void read();          //Displays the entire library
         void addLder();       //Adds profile to leaderboard
         bool isGood(char[]);  //Input verification
-        
-        //Mutators
-        
-        //Accessors
-        string getName(){return user.name;}
-        unsigned int getScore(){return user.score;}
-        int getMoney(){return user.money;}
         
         //Add Functions
         void addMoney(int);

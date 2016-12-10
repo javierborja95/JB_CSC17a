@@ -41,7 +41,7 @@ Game::~Game(){
         addLder(); //Add to leaderboard
     }
     cout<<"Fun fact: You called class Letter ";
-    if(staticCalls<0) cout<<"0 times"<<endl;
+    if(staticCalls<0||staticCalls==32768) cout<<"0 times"<<endl;
     else cout<<staticCalls<<" times"<<endl;
 }
 

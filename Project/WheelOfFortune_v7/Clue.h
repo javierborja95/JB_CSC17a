@@ -18,7 +18,7 @@ using namespace std; //Namespace of the System Libraries
 
 class Clue{
     private:
-        unsigned int categry;
+        unsigned int categry;//Number to represent a category
         char phrase[44];     //Max Phrase length
     public:
         //Mutators

@@ -18,7 +18,7 @@ using namespace std; //Namespace of the System Libraries
 const int ALPHA=26; //Size of the alphabet
 
 class Keyboard: public Letter{
-    private:
+    public:
         Letter *arr; //Array of letters
     public:
         //Constructor
